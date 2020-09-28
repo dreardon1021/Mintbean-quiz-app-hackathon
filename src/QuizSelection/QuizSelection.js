@@ -1,18 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import '../App/App.css'
-import './QuizSelection.css'
+import QuizSelectionCard from '../QuizSelectionCard/QuizSelectionCard';
+
+import '../App/App.css';
+import './QuizSelection.css';
 
 const QuizSelection = ({ quizzes }) => {
   return (
-    <section>
+    <section className="quiz-selection-container">
       {quizzes.map(quiz => {
       return (
-        <h2>{quiz.name}</h2>
+        <QuizSelectionCard quiz={quiz} />
       )
     })}
     </section>
-    
   )
 }
 
