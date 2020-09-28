@@ -1,5 +1,5 @@
 let defaultQuizzes = {
-  "quiz 1": [
+  "General Knowledge": [
     {
     "category": "General Knowledge",
     "type": "multiple",
@@ -117,7 +117,7 @@ let defaultQuizzes = {
     ]
     }
     ],
-  "quiz 2" : [
+  "Film/Cinema" : [
     {
     "category": "Entertainment: Film",
     "type": "multiple",
@@ -237,7 +237,7 @@ let defaultQuizzes = {
     ]
     }
     ],
-  "quiz3": [
+  "Video Games": [
     {
     "category": "Entertainment: Video Games",
     "type": "multiple",
