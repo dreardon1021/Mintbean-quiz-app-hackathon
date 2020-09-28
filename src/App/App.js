@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return(
-      <body>
+      <main>
         <Header />
         <Switch>
           <Route path="/" exact component={
@@ -29,7 +29,7 @@ class App extends Component {
             Homepage
           }/>
         </Switch>
-      </body>
+      </main>
     )
   }
 }
