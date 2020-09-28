@@ -3,11 +3,21 @@ nav {
   height: auto;
   min-height: 5em;
   background-color: #4F89E1;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: fit-content;
-  font-family: 'Ruslan Display'
+  font-family: 'Ruslan Display';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 39px;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+  margin-left: 0.5em;
 }

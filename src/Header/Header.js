@@ -7,8 +7,8 @@ import '../App/App.css'
 const Header = () => {
   return (
     <nav>
-      <NavLink className="text-decoration-none" to="/">
-        <h1 className="logo">Quiz ? App</h1>
+      <NavLink className="text-decoration-none logo" to="/">
+        <h1 className="logo cursor-pointer">Quiz ? App</h1>
       </NavLink>
     </nav>
   )

@@ -1,0 +1,36 @@
+.homepage-container {
+  width: 100%;
+  height: auto;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.homepage-text {
+  width: 50%;
+  height: auto;
+  font-family: Rokkitt;
+  font-size: 48px;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 41px;
+}
+
+.homepage-buttons-container {
+  width: 30%;
+  height: auto;
+  min-height: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.landing-button {
+  width: 15em;
+  height: auto;
+  min-height: 5em;
+  font-family: 'Rock Salt';
+}
