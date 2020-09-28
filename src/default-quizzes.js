@@ -357,5 +357,5 @@ let defaultQuizzes = {
     ]
     }
     ]
-
+}
 export default defaultQuizzes
