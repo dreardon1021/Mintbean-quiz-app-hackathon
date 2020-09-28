@@ -53,12 +53,12 @@ let defaultQuizzes = [
       "category": "General Knowledge",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "What is the romanized Russian word for &quot;winter&quot;?",
+      "question": "What is the romanized Russian word for winter?",
       "correct_answer": "Zima",
       "incorrect_answers": [
       "Leto",
       "Vesna",
-      "Osen&#039;"
+      "Osen"
       ]
       },
       {
@@ -90,10 +90,10 @@ let defaultQuizzes = [
       "type": "multiple",
       "difficulty": "medium",
       "question": "What is real haggis made of?",
-      "correct_answer": "Sheep&#039;s Heart, Liver and Lungs",
+      "correct_answer": "Sheeps Heart, Liver and Lungs",
       "incorrect_answers": [
-      "Sheep&#039;s Heart, Kidneys and Lungs",
-      "Sheep&#039;s Liver, Kidneys and Eyes",
+      "Sheep's Heart, Kidneys and Lungs",
+      "Sheep's Liver, Kidneys and Eyes",
       "Whole Sheep"
       ]
       },
@@ -129,7 +129,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "What is the name of James Dean&#039;s character in the 1955 movie &quot;Rebel Without a Cause&quot;?",
+      "question": "What is the name of James Dean's character in the 1955 movie Rebel Without a Cause?",
       "correct_answer": "Jim Stark",
       "incorrect_answers": [
       "Ned Stark",
@@ -141,7 +141,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In which African country was the 2006 film &#039;Blood Diamond&#039; mostly set in?",
+      "question": "In which African country was the 2006 film Blood Diamond mostly set in?",
       "correct_answer": "Sierra Leone",
       "incorrect_answers": [
       "Liberia",
@@ -163,7 +163,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "What is the name of the Artificial Intelligence system in the 1983 film, &quot;WarGames&quot;?",
+      "question": "What is the name of the Artificial Intelligence system in the 1983 film, WarGames?",
       "correct_answer": "War Operation Plan Response",
       "incorrect_answers": [
       "Self Evolving Thought Helix",
@@ -175,7 +175,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "Which iconic character is featured in movies such as &quot;The Enforcer&quot;, &quot;Sudden Impact&quot;, and &quot;The Dead Pool&quot;?",
+      "question": "Which iconic character is featured in movies such as The Enforcer, Sudden Impact, and The Dead Pool?",
       "correct_answer": "Dirty Harry",
       "incorrect_answers": [
       "Indiana Jones",
@@ -187,7 +187,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In the 1994 movie &quot;Speed&quot;, what is the minimum speed the bus must go to prevent to bomb from exploding?",
+      "question": "In the 1994 movie Speed, what is the minimum speed the bus must go to prevent to bomb from exploding?",
       "correct_answer": "50 mph",
       "incorrect_answers": [
       "60 mph",
@@ -199,7 +199,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In the 1971 film &quot;Willy Wonka &amp; the Chocolate Factory&quot;, who played Willy Wonka?",
+      "question": "In the 1971 film Willy Wonka &amp; the Chocolate Factory, who played Willy Wonka?",
       "correct_answer": "Gene Wilder",
       "incorrect_answers": [
       "Shia LeBouf",
@@ -211,7 +211,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In which movie does Robin Williams&#039; character have to disguise themselves into a woman?",
+      "question": "In which movie does Robin Williams'; character have to disguise themselves into a woman?",
       "correct_answer": "Mrs. Doubtfire",
       "incorrect_answers": [
       "Old Dogs",
@@ -223,7 +223,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "Which famous singer was portrayed by actor Kevin Spacey in the 2004 biographical film &quot;Beyond the Sea&quot;?",
+      "question": "Which famous singer was portrayed by actor Kevin Spacey in the 2004 biographical film Beyond the Sea?",
       "correct_answer": "Bobby Darin",
       "incorrect_answers": [
       "Louis Armstrong",
@@ -235,8 +235,8 @@ let defaultQuizzes = [
       "category": "Entertainment: Film",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "What Queen song plays during the final fight scene of the film &quot;Hardcore Henry&quot;?",
-      "correct_answer": "Don&#039;t Stop Me Now",
+      "question": "What Queen song plays during the final fight scene of the film Hardcore Henry?",
+      "correct_answer": "Don't Stop Me Now",
       "incorrect_answers": [
       "Brighton Rock",
       "Another Bites the Dust",
@@ -253,7 +253,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "Who&#039;s the creator of Geometry Dash?",
+      "question": "Who's the creator of Geometry Dash?",
       "correct_answer": "Robert Topala",
       "incorrect_answers": [
       "Scott Cawthon",
@@ -265,7 +265,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "Which company developed the video game &quot;Borderlands&quot;?",
+      "question": "Which company developed the video game Borderlands?",
       "correct_answer": "Gearbox Software",
       "incorrect_answers": [
       "2K Games",
@@ -277,7 +277,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "What is the name of the virus in &quot;Metal Gear Solid 1&quot;?",
+      "question": "What is the name of the virus in Metal Gear Solid 1?",
       "correct_answer": "FOXDIE",
       "incorrect_answers": [
       "FOXENGINE",
@@ -289,10 +289,10 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In the game series &quot;The Legend of Zelda&quot;, what was the first 3D game?",
+      "question": "In the game series The Legend of Zelda, what was the first 3D game?",
       "correct_answer": "Ocarina of Time",
       "incorrect_answers": [
-      "Majora&#039;s Mask",
+      "Majora's Mask",
       "A Link to the Past",
       "The Wind Waker"
       ]
@@ -301,7 +301,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "Capcom&#039;s survival horror title Dead Rising, canonically starts on what day of September 2006?",
+      "question": "Capcom's survival horror title Dead Rising, canonically starts on what day of September 2006?",
       "correct_answer": "September 19th",
       "incorrect_answers": [
       "September 21st",
@@ -325,7 +325,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "When was Nintendo&#039;s Virtual Boy released?",
+      "question": "When was Nintendo's Virtual Boy released?",
       "correct_answer": "1995",
       "incorrect_answers": [
       "1989",
@@ -337,7 +337,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In &quot;The Binding of Isaac&quot;, what is the name of the final boss that you fight in The Void?",
+      "question": "In The Binding of Isaac, what is the name of the final boss that you fight in The Void?",
       "correct_answer": "Delirium",
       "incorrect_answers": [
       "Mega Satan",
@@ -349,7 +349,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "In the Season One Championship of &quot;League of Legends&quot;, the highest achievable rank was Diamond.",
+      "question": "In the Season One Championship of League of Legends, the highest achievable rank was Diamond.",
       "correct_answer": "False",
       "incorrect_answers": [
       "True"
@@ -359,7 +359,7 @@ let defaultQuizzes = [
       "category": "Entertainment: Video Games",
       "type": "multiple",
       "difficulty": "medium",
-      "question": "In the game Tom Clancy&#039;s Rainbow 6 Siege, what organization is Valkyrie from?",
+      "question": "In the game Tom Clancy's Rainbow 6 Siege, what organization is Valkyrie from?",
       "correct_answer": "Navy Seals",
       "incorrect_answers": [
       "S.A.S",

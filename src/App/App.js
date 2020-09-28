@@ -42,7 +42,7 @@ class App extends Component {
             component={({ match }) => {
               const { params } = match;
               return (<Quiz
-                id={params.quiz_name}
+                id={params.quiz_id}
                 quizzes={this.state.quizzes}
               />)
             }}
