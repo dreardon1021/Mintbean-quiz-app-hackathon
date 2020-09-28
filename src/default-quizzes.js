@@ -1,6 +1,7 @@
 let defaultQuizzes = [
   {
     "name": "General Knowledge",
+    "image": "https://medicine.wustl.edu/wp-content/uploads/GettyImages-627013932_forweb-700x467.jpg",
     "questions": [
       {
       "category": "General Knowledge",
@@ -121,7 +122,8 @@ let defaultQuizzes = [
     ]
   },
   {
-    "name": "Film/Cinema",
+    "name": "Film and Cinema",
+    "image": "https://bhsbeat.com/wp-content/uploads/2018/03/Movie-reel-film-reel-clipart.jpeg",
     "questions" : [
       {
       "category": "Entertainment: Film",
@@ -245,6 +247,7 @@ let defaultQuizzes = [
   },
   {
     "name": "Video Games",
+    "image": "https://lh3.googleusercontent.com/proxy/XdgbwztxjE0AZcEFpiEkT-JHi19ho7hulocPhd5UXzHebgUIMpi5CVjo-AJ1K1jlQbUcfLat1VdIyKjgoZAmJk3NcSFJp7w",
     "questions": [
       {
       "category": "Entertainment: Video Games",
