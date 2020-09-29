@@ -5,6 +5,7 @@ import Header from '../Header/Header'
 import Homepage from '../Homepage/Homepage'
 import QuizSelection from '../QuizSelection/QuizSelection'
 import Quiz from '../Quiz/Quiz'
+import CreateQuiz from '../CreateQuiz/CreateQuiz'
 
 import defaultQuizzes from '../default-quizzes'
 
@@ -51,7 +52,7 @@ class App extends Component {
             path="/create-quiz"
             exact
             component={
-              Homepage
+              CreateQuiz
             }
           />
         </Switch>
