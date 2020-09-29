@@ -1,0 +1,26 @@
+.multiple-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 40%;
+  height: auto;
+  min-height: 50vh;
+}
+
+.submit-answer-btn {
+  width: 50%;
+}
+
+.potential-answer {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+label {
+  margin-left: 1em;
+}

@@ -23,3 +23,10 @@ nav {
   -webkit-text-stroke-width: 1px;
   margin-left: 0.5em;
 }
+
+.logo:hover {
+  color: black;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: white;
+}

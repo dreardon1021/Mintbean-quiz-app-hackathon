@@ -10,7 +10,7 @@ const QuizSelection = ({ quizzes }) => {
     <section className="quiz-selection-container">
       {quizzes.map(quiz => {
       return (
-        <QuizSelectionCard quiz={quiz} />
+        <QuizSelectionCard quiz={quiz} key={quiz.name} />
       )
     })}
     </section>
