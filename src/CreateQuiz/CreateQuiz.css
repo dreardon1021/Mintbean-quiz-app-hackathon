@@ -44,3 +44,33 @@
 .quiz-list-name-button {
   width: 100%;
 }
+
+.create-edit-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.no-content-text {
+  font-size: 3em;
+  text-align: center;
+}
+
+.new-quiz-form {
+  width: 80%;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-quiz-input {
+  width: 80%;
+  height: 2em;
+}
+
+.new-quiz-submit-button {
+  width: 30%;
+}
