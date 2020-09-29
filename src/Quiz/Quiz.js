@@ -61,8 +61,28 @@ class Quiz extends Component {
         </div>
       </section>
     ) : (
-    <section>
-      
+    <section className="quiz-container">
+      <div className="quiz-results">
+        <h2 className="quiz-name">{this.state.name}</h2>
+        <h3>{`Quiz results ${this.state.numberCorrect} / ${this.state.currentIndex} -> ${(this.state.numberCorrect / this.state.currentIndex) * 100}%`}</h3>
+      </div>
+      <article className="question-results-container">
+        {this.state.answeredQuestions.map(question => {
+          let keys = Object.keys(question)
+
+          return (
+            <div className="individual-question-result">
+              <h5>{question[keys[0]].question}</h5>
+              {question[keys[0]].userAnswer === question[keys[0]].correctAnswer ? (
+                    <p className="correct-text">{`You answered correctly with ${question[keys[0]].correctAnswer}`}</p>
+                  ) : (
+                    <p className="incorrect-text">{`You answered incorrectly with ${question[keys[0]].correctAnswer}`}</p>
+                  )
+              }
+            </div>
+          )
+        })}
+      </article>
     </section>)
 
 
