@@ -17,7 +17,6 @@ class Quiz extends Component {
       numberCorrect: 0,
       numberIncorrect: 0,
       answeredQuestions: [],
-      isLoaded: true,
     }
   }
 
@@ -27,15 +26,15 @@ class Quiz extends Component {
         currentIndex: this.state.currentIndex + 1,
         numberCorrect: this.state.numberCorrect + 1,
         numberIncorrect: this.state.numberIncorrect,
-        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer}),
+        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentIndex]: userAnswer}),
         isLoaded: false
       })
     } else {
       this.setState({
         currentIndex: this.state.currentIndex + 1,
-        numberCorrect: this.state.numberCorrect + 1,
-        numberIncorrect: this.state.numberIncorrect,
-        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer}),
+        numberCorrect: this.state.numberCorrect,
+        numberIncorrect: this.state.numberIncorrect + 1,
+        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentIndex]: userAnswer}),
         isLoaded: false,
       })
     }
@@ -45,12 +44,11 @@ class Quiz extends Component {
 
   getNextQuestion() {
     setTimeout(() => this.setState({currentQuestion: this.state.questions[this.state.currentIndex]}), 2000)
-    setTimeout(() => this.setState({isLoaded: true}), 2000)
   }
 
   render() {
-
-    return(
+    let quiz = this.state.currentIndex !== this.state.questions.length ?
+    (
       <section className="quiz-container">
         <h2 className="quiz-name">{this.state.name}</h2>
         <div className="questions-answers-container">
@@ -62,6 +60,14 @@ class Quiz extends Component {
           />
         </div>
       </section>
+    ) : (
+    <section>
+      
+    </section>)
+
+
+    return(
+      quiz
     )
   }
 }

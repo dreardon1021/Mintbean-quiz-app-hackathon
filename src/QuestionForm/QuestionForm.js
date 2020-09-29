@@ -49,7 +49,7 @@ class QuestionForm extends Component {
   submitAnswer(e) {
     e.preventDefault()
     let answer = {
-      question: this.state.question,
+      question: this.state.question.question,
       userAnswer: this.state.selectedAnswer,
       correctAnswer: this.state.question.correct_answer
     }
@@ -81,12 +81,6 @@ class QuestionForm extends Component {
         <div></div>
       )
     }
-
-
-
-
-
-
 
     return(
       form
