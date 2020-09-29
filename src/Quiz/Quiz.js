@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
+import { Button } from '@material-ui/core'
 
 import '../App/App.css'
 import './Quiz.css'
@@ -66,6 +68,7 @@ class Quiz extends Component {
         <h2 className="quiz-name">{this.state.name}</h2>
         <h3>{`Quiz results ${this.state.numberCorrect} / ${this.state.currentIndex} -> ${(this.state.numberCorrect / this.state.currentIndex) * 100}%`}</h3>
       </div>
+      <NavLink className="text-decoration-none" to="/"><Button type="submit" variant="contained" color="primary">Home</Button></NavLink>
       <article className="question-results-container">
         {this.state.answeredQuestions.map(question => {
           let keys = Object.keys(question)
@@ -76,7 +79,7 @@ class Quiz extends Component {
               {question[keys[0]].userAnswer === question[keys[0]].correctAnswer ? (
                     <p className="correct-text">{`You answered correctly with ${question[keys[0]].correctAnswer}`}</p>
                   ) : (
-                    <p className="incorrect-text">{`You answered incorrectly with ${question[keys[0]].correctAnswer}`}</p>
+                    <p className="incorrect-text">{`You answered incorrectly with ${question[keys[0]].userAnswer}. The correct answer is ${question[keys[0]].correctAnswer}`}</p>
                   )
               }
             </div>
