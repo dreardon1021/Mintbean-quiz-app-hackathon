@@ -12,6 +12,7 @@ class CreateQuiz extends Component {
     this.state = {
       quizList: null,
       editingQuiz: false,
+      newQuiz: false,
       quizOnEdit: null
     }
   }
@@ -27,12 +28,6 @@ class CreateQuiz extends Component {
   }
 
   render() {
-    let currentQuiz = this.state.editingQuiz === false ?  null : (
-      <div className="current-quiz-question-container">
-        <p>test</p>
-      </div>
-    )
-
     let quizList = this.state.quizList === null ? null : (
       <div className="quiz-list-container">
         {this.state.quizList.map(quiz => {
@@ -40,16 +35,13 @@ class CreateQuiz extends Component {
             <Button className="quiz-list-name-button" variant="contained" color="primary">{quiz.name}</Button>
           )
         })}
+        <Button className="quiz-list-name-button" variant="contained" color="secondary">New Quiz </Button>
       </div>
     )
 
     return(
       <section className="create-quiz-container">
         <aside className="quiz-list-info">
-          <div className="quiz-aside-container">
-            <h3 className="quiz-aside-header">Current Quiz</h3>
-            {currentQuiz}
-          </div>
           <div className="quiz-aside-container">
             <h3 className="quiz-aside-header">Quiz List</h3>
             {quizList}
