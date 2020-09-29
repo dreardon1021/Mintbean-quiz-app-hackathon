@@ -3,6 +3,8 @@ import { Button } from '@material-ui/core';
 
 import defaultQuizzes from '../default-quizzes'
 
+import CreateQuestionCard from '../CreateQuestionCard/CreateQuestionCard'
+
 import '../App/App.css';
 import './CreateQuiz.css';
 
@@ -39,16 +41,29 @@ class CreateQuiz extends Component {
 
   updateNewQuizForm(e) {
     if (e.target.name === 'name') {
-      this.setState({newQuiz: {name: e.target.value, url: this.state.newQuiz.url, numOfQuestions: this.state.newQuiz.numOfQuestions}})
+      this.setState({newQuiz: {name: e.target.value, url: this.state.newQuiz.url, numOfQuestions: this.state.newQuiz.numOfQuestions, questions: []}})
     } else if (e.target.name === 'url') {
-      this.setState({newQuiz: {name: this.state.newQuiz.name, url: e.target.value, numOfQuestions: this.state.newQuiz.numOfQuestions}})
+      this.setState({newQuiz: {name: this.state.newQuiz.name, url: e.target.value, numOfQuestions: this.state.newQuiz.numOfQuestions, questions: []}})
     } else if (e.target.name === 'numOfQuestions') {
-      this.setState({newQuiz: {name: this.state.newQuiz.name, url: this.state.newQuiz.url, numOfQuestions: e.target.value}})
+      this.setState({newQuiz: {name: this.state.newQuiz.name, url: this.state.newQuiz.url, numOfQuestions: e.target.value, questions: []}})
     }
   }
 
-  submitNewQuizParamaeters() {
-    
+  submitNewQuizParamaeters(e) {
+    e.preventDefault()
+    this.setState(
+      {
+        quizOnEdit: this.state.newQuiz,
+        newQuizSelected: false,
+        editingQuizSelected: true,
+        newQuiz: {
+          name: null,
+          url: null,
+          numOfQuestions: null,
+          questions: []
+        }
+      }
+    )
   }
 
   render() {
@@ -80,8 +95,28 @@ class CreateQuiz extends Component {
             <input onChange={(e) => this.updateNewQuizForm(e)} name="name" value={this.state.newQuiz.name} type="text" className="new-quiz-input" placeholder="Quiz Name" />
             <input onChange={(e) => this.updateNewQuizForm(e)} name="url" value={this.state.newQuiz.url} type="text" className="new-quiz-input" placeholder="Quiz Image URL" />
             <input onChange={(e) => this.updateNewQuizForm(e)} name="numOfQuestions" value={this.state.newQuiz.numOfQuestions} type="number" className="new-quiz-input" placeholder="Number of Questions" />
-            <Button className="new-quiz-submit-button" type="submit" variant="contained" color="primary">Submit</Button>
+            <Button onClick={(e) => this.submitNewQuizParamaeters(e)} className="new-quiz-submit-button" type="submit" variant="contained" color="primary">Submit</Button>
           </form>
+        </section>
+      )
+    } else if (this.state.newQuizSelected === false && this.state.editingQuizSelected === true) {
+      content = (
+        <section className="create-edit-cards-container">
+          {this.state.quizOnEdit.questions.length === 0 ? (
+              this.state.quizOnEdit.numOfQuestions.map(question => {
+                return <CreateQuestionCard />
+              })
+            ) : (
+              this.state.quizOnEdit.questions.map(question => {
+                return <CreateQuestionCard
+                  type={question.type}
+                  question={question.question}
+                  correctAnswer={question.correct_answer}
+                  incorrectAnswer={question.incorrect_answers}
+                  />
+              })
+            )
+          }
         </section>
       )
     }
