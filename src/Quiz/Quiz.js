@@ -16,7 +16,8 @@ class Quiz extends Component {
       currentQuestion: this.props.quiz.questions[0],
       numberCorrect: 0,
       numberIncorrect: 0,
-      answeredQuestions: []
+      answeredQuestions: [],
+      isLoaded: true,
     }
   }
 
@@ -26,14 +27,16 @@ class Quiz extends Component {
         currentIndex: this.state.currentIndex + 1,
         numberCorrect: this.state.numberCorrect + 1,
         numberIncorrect: this.state.numberIncorrect,
-        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer})
+        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer}),
+        isLoaded: false
       })
     } else {
       this.setState({
         currentIndex: this.state.currentIndex + 1,
         numberCorrect: this.state.numberCorrect + 1,
         numberIncorrect: this.state.numberIncorrect,
-        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer})
+        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer}),
+        isLoaded: false,
       })
     }
 
@@ -42,6 +45,7 @@ class Quiz extends Component {
 
   getNextQuestion() {
     setTimeout(() => this.setState({currentQuestion: this.state.questions[this.state.currentIndex]}), 2000)
+    setTimeout(() => this.setState({isLoaded: true}), 2000)
   }
 
   render() {

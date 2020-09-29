@@ -11,12 +11,22 @@ class QuestionForm extends Component {
       possibleAnswers: [...this.props.question.incorrect_answers, this.props.question.correct_answer],
       question: this.props.question,
       selectedAnswer: '',
-      quizQuestions: this.props.quizQuestions
+      quizQuestions: this.props.quizQuestions,
+      value: this.props
     }
   }
 
-  componentDidMount() {
-    this.setState({possibleAnswers: this.shuffleAnswers(this.state.possibleAnswers)})
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.state.value) {
+      this.setState(
+        {
+          value: this.props,
+          possibleAnswers: [...this.props.question.incorrect_answers, this.props.question.correct_answer],
+          question: this.props.question,
+          selectedAnswer: '',
+        }
+      )
+    }
   }
 
   shuffleAnswers(array) {
@@ -50,7 +60,7 @@ class QuestionForm extends Component {
   render() {
     let form;
 
-    if (this.state.question.type === 'multiple') {
+    if (this.state.question.type === 'multiple' || this.state.question.type === 'boolean') {
       form = (
         <form className="multiple-form">
           {this.state.possibleAnswers.map(answer => {
@@ -64,10 +74,12 @@ class QuestionForm extends Component {
           <Button onClick={(e) => this.submitAnswer(e)} type="submit" className="submit-answer-btn" variant="contained" color="primary">Submit</Button>
         </form>
       )
-    } else if (this.state.question.type === 'boolean') {
-
+    } else if (this.state.question.type === 'ordered') {
+      // submit this when ordered data structure exissts
     } else {
-
+      form = (
+        <div></div>
+      )
     }
 
 
