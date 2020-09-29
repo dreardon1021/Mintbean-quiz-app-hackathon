@@ -12,3 +12,15 @@
 .submit-answer-btn {
   width: 50%;
 }
+
+.potential-answer {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+label {
+  margin-left: 1em;
+}

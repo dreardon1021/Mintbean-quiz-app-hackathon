@@ -20,9 +20,8 @@ class Quiz extends Component {
     }
   }
 
-  nextQuestion() {
-    let nextIteration = this.state.currentIndex += 1
-    this.setState({currentIndex: nextIteration, currentQuestion: this.state.questions[nextIteration]})
+  nextQuestion(currentIndex) {
+    this.setState({currentIndex: currentIndex + 1})
   }
 
   render() {
@@ -32,7 +31,12 @@ class Quiz extends Component {
         <h2 className="quiz-name">{this.state.name}</h2>
         <div className="questions-answers-container">
           <p className="quiz-question">{this.state.currentQuestion.question}</p>
-          <QuestionForm question={this.state.currentQuestion} nextQuestion={this.nextQuestion}/>
+          <QuestionForm
+            question={this.state.currentQuestion}
+            nextQuestion={this.nextQuestion}
+            currentIndex={this.state.currentIndex}
+            quizQuestions={this.state.questions}
+          />
         </div>
       </section>
     )

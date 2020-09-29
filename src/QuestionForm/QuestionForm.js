@@ -44,12 +44,20 @@ class QuestionForm extends Component {
               </div>
             )
           })}
-          <Button type="submit" className="submit-answer-btn text-decoration-none" variant="contained" color="primary">Submit</Button>
+          <Button onClick={this.props.nextQuestion(this.props.currentIndex)} type="submit" className="submit-answer-btn text-decoration-none" variant="contained" color="primary">Submit</Button>
         </form>
       )
     } else if (this.state.question.type === 'boolean') {
 
+    } else {
+
     }
+
+
+
+
+
+
 
     return(
       form
