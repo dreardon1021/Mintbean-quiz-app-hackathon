@@ -1,0 +1,14 @@
+.multiple-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 40%;
+  height: auto;
+  min-height: 50vh;
+}
+
+.submit-answer-btn {
+  width: 50%;
+}

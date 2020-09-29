@@ -43,7 +43,7 @@ class App extends Component {
               const { params } = match;
               return (<Quiz
                 id={params.quiz_id}
-                quizzes={this.state.quizzes}
+                quiz={this.state.quizzes.find(quiz => params.quiz_id === quiz.name)}
               />)
             }}
           />
