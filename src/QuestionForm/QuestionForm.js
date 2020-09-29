@@ -9,7 +9,9 @@ class QuestionForm extends Component {
     super(props);
     this.state = {
       possibleAnswers: [...this.props.question.incorrect_answers, this.props.question.correct_answer],
-      question: this.props.question
+      question: this.props.question,
+      selectedAnswer: '',
+      quizQuestions: this.props.quizQuestions
     }
   }
 
@@ -30,21 +32,36 @@ class QuestionForm extends Component {
     return array
   }
 
+  selectAnswer(e) {
+    this.setState({selectedAnswer: e.target.value})
+  }
+
+  submitAnswer(e) {
+    e.preventDefault()
+    let answer = {
+      question: this.state.question,
+      userAnswer: this.state.selectedAnswer,
+      correctAnswer: this.state.question.correct_answer
+    }
+
+    this.props.submitResults(answer)
+  }
+
   render() {
     let form;
 
     if (this.state.question.type === 'multiple') {
       form = (
-        <form class="multiple-form">
+        <form className="multiple-form">
           {this.state.possibleAnswers.map(answer => {
             return (
-              <div className="potential-answer">
-                <input type="radio" name={answer} value={answer}></input>
-                <label for={answer}>{answer}</label>
+              <div key={answer} className="potential-answer">
+                <input onChange={(e) => this.selectAnswer(e)} type="radio" name={answer} value={answer} checked={this.state.selectedAnswer === answer}></input>
+                <label>{answer}</label>
               </div>
             )
           })}
-          <Button onClick={this.props.nextQuestion(this.props.currentIndex)} type="submit" className="submit-answer-btn text-decoration-none" variant="contained" color="primary">Submit</Button>
+          <Button onClick={(e) => this.submitAnswer(e)} type="submit" className="submit-answer-btn" variant="contained" color="primary">Submit</Button>
         </form>
       )
     } else if (this.state.question.type === 'boolean') {

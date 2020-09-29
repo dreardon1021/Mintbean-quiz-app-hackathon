@@ -9,19 +9,39 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentIndex: 0,
       quiz: this.props.quiz,
       name: this.props.quiz.name,
       questions: this.props.quiz.questions,
       currentQuestion: this.props.quiz.questions[0],
-      currentIndex: 0,
       numberCorrect: 0,
       numberIncorrect: 0,
       answeredQuestions: []
     }
   }
 
-  nextQuestion(currentIndex) {
-    this.setState({currentIndex: currentIndex + 1})
+  submitResults(userAnswer) {
+    if (userAnswer.userAnswer === userAnswer.correctAnswer) {
+      this.setState({
+        currentIndex: this.state.currentIndex + 1,
+        numberCorrect: this.state.numberCorrect + 1,
+        numberIncorrect: this.state.numberIncorrect,
+        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer})
+      })
+    } else {
+      this.setState({
+        currentIndex: this.state.currentIndex + 1,
+        numberCorrect: this.state.numberCorrect + 1,
+        numberIncorrect: this.state.numberIncorrect,
+        answeredQuestions: this.state.answeredQuestions.concat({[this.state.currentQuestion.question]: userAnswer})
+      })
+    }
+
+    this.getNextQuestion()
+  }
+
+  getNextQuestion() {
+    setTimeout(() => this.setState({currentQuestion: this.state.questions[this.state.currentIndex]}), 2000)
   }
 
   render() {
@@ -33,8 +53,7 @@ class Quiz extends Component {
           <p className="quiz-question">{this.state.currentQuestion.question}</p>
           <QuestionForm
             question={this.state.currentQuestion}
-            nextQuestion={this.nextQuestion}
-            currentIndex={this.state.currentIndex}
+            submitResults ={this.submitResults.bind(this)}
             quizQuestions={this.state.questions}
           />
         </div>
