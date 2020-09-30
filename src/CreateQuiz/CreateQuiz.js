@@ -36,12 +36,12 @@ class CreateQuiz extends Component {
   }
 
   createNewQuiz() {
-    this.setState({newQuizSelected: true})
+    this.setState({newQuizSelected: true, editingQuizSelected: false})
   }
 
   editExistingQuiz(e) {
     let quizToEdit = this.state.quizList.find(quiz => e.currentTarget.value === quiz.name)
-    this.setState({editingQuizSelected: true, quizOnEdit: quizToEdit})
+    this.setState({editingQuizSelected: true, newQuizSelected: false, quizOnEdit: quizToEdit})
   }
 
   updateNewQuizForm(e) {
@@ -56,15 +56,13 @@ class CreateQuiz extends Component {
 
   submitNewQuizParamaeters(e) {
     e.preventDefault()
-    
+
     let newQuiz = {
       name: this.state.newQuiz.name,
       url: this.state.newQuiz.url,
       numOfQuestions: Array.from({length: this.state.newQuiz.numOfQuestions}, (_, i) => i + 1),
       questions: []
     }
-
-    console.log(newQuiz)
 
     this.setState(
       {
@@ -128,7 +126,7 @@ class CreateQuiz extends Component {
                   type={question.type}
                   question={question.question}
                   correctAnswer={question.correct_answer}
-                  incorrectAnswer={question.incorrect_answers}
+                  incorrectAnswers={question.incorrect_answers}
                   />
               })
             )
