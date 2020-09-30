@@ -13,13 +13,13 @@ class CreateQuiz extends Component {
     super();
     this.state = {
       quizList: null,
-      quizOnEdit: null,
+      quizOnEdit: {},
       editingQuizSelected: false,
       newQuizSelected: false,
       newQuiz: {
-        name: null,
-        url: null,
-        numOfQuestions: null,
+        name: '',
+        url: '',
+        numOfQuestions: 0,
         questions: []
       }
     }
@@ -39,6 +39,11 @@ class CreateQuiz extends Component {
     this.setState({newQuizSelected: true})
   }
 
+  editExistingQuiz(e) {
+    let quizToEdit = this.state.quizList.find(quiz => e.currentTarget.value === quiz.name)
+    this.setState({editingQuizSelected: true, quizOnEdit: quizToEdit})
+  }
+
   updateNewQuizForm(e) {
     if (e.target.name === 'name') {
       this.setState({newQuiz: {name: e.target.value, url: this.state.newQuiz.url, numOfQuestions: this.state.newQuiz.numOfQuestions, questions: []}})
@@ -51,18 +56,28 @@ class CreateQuiz extends Component {
 
   submitNewQuizParamaeters(e) {
     e.preventDefault()
+    
+    let newQuiz = {
+      name: this.state.newQuiz.name,
+      url: this.state.newQuiz.url,
+      numOfQuestions: Array.from({length: this.state.newQuiz.numOfQuestions}, (_, i) => i + 1),
+      questions: []
+    }
+
+    console.log(newQuiz)
+
     this.setState(
       {
-        quizOnEdit: this.state.newQuiz,
+        quizOnEdit: newQuiz,
         newQuizSelected: false,
         editingQuizSelected: true,
         newQuiz: {
-          name: null,
-          url: null,
-          numOfQuestions: null,
+          name: '',
+          url: '',
+          numOfQuestions: '',
           questions: []
         }
-      }
+      },
     )
   }
 
@@ -72,7 +87,7 @@ class CreateQuiz extends Component {
       <div className="quiz-list-container">
         {this.state.quizList.map(quiz => {
           return (
-            <Button className="quiz-list-name-button" value={quiz.name} variant="contained" color="primary">{quiz.name}</Button>
+            <Button onClick={(e) => this.editExistingQuiz(e, "value")} key={quiz.name} className="quiz-list-name-button" value={quiz.name} variant="contained" color="primary">{quiz.name}</Button>
           )
         })}
         <Button onClick={() => this.createNewQuiz()} className="quiz-list-name-button" variant="contained" color="secondary">New Quiz </Button>
@@ -90,7 +105,7 @@ class CreateQuiz extends Component {
     } else if (this.state.newQuizSelected === true && this.state.editingQuizSelected === false) {
       content = (
         <section className="create-edit-cards-container">
-          <form class="new-quiz-form">
+          <form className="new-quiz-form">
             <h2>New Quiz</h2>
             <input onChange={(e) => this.updateNewQuizForm(e)} name="name" value={this.state.newQuiz.name} type="text" className="new-quiz-input" placeholder="Quiz Name" />
             <input onChange={(e) => this.updateNewQuizForm(e)} name="url" value={this.state.newQuiz.url} type="text" className="new-quiz-input" placeholder="Quiz Image URL" />
@@ -103,12 +118,13 @@ class CreateQuiz extends Component {
       content = (
         <section className="create-edit-cards-container">
           {this.state.quizOnEdit.questions.length === 0 ? (
-              this.state.quizOnEdit.numOfQuestions.map(question => {
-                return <CreateQuestionCard />
-              })
+            this.state.quizOnEdit.numOfQuestions.map(question => {
+              return <CreateQuestionCard />
+            })
             ) : (
               this.state.quizOnEdit.questions.map(question => {
                 return <CreateQuestionCard
+                  key={question.question}
                   type={question.type}
                   question={question.question}
                   correctAnswer={question.correct_answer}

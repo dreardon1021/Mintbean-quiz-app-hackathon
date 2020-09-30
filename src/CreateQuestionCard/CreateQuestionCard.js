@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 class CreateQuestionCard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       type: '',
       question: '',
@@ -15,9 +15,9 @@ class CreateQuestionCard extends Component {
 
 
     return(
-      <article>
+      <article key={this.props.question}>
         <form>
-
+          <input type="text" placeholder="type" />
         </form>
       </article>
     )
