@@ -32,10 +32,16 @@ class CreateQuestionCard extends Component {
     if(this.state.type === 'multiple') {
       answerFields = (
         <div className="answers-container">
-          <input value={this.state.correctAnswer} placeholder="Correct Answer" />
-          <input value={this.state.incorrectAnswers[0]} placeholder="Incorrect Answer 1" />
-          <input value={this.state.incorrectAnswers[1]} placeholder="Incorrect Answer 2" />
-          <input value={this.state.incorrectAnswers[2]} placeholder="Incorrect Answer 3" />
+          <div className="correct-container">
+            <label for="correct-answer">Correct Answer:</label>
+            <input value={this.state.correctAnswer} placeholder="Correct Answer" />
+          </div>
+          <div className="incorrect-container">
+            <label for="incorrect-answers">Incorrect Answers:</label>
+            <input value={this.state.incorrectAnswers[0]} placeholder="Incorrect Answer 1" />
+            <input value={this.state.incorrectAnswers[1]} placeholder="Incorrect Answer 2" />
+            <input value={this.state.incorrectAnswers[2]} placeholder="Incorrect Answer 3" />
+          </div>
         </div>
       )
     } else if (this.state.type === 'boolean') {
@@ -54,19 +60,21 @@ class CreateQuestionCard extends Component {
       </div>
       )
     } else if (this.state.type === 'ordered') {
-
+        //add this when ready
     }
 
 
     return(
       <article className="question-card" key={this.props.question}>
         <form>
-          <label for="type">Question Type:</label>
-          <select value={this.state.type} name="types">
-            <option value="multiple">Multiple Choice</option>
-            <option value="boolean">True or False</option>
-            <option value="ordered">Ordered</option>
-          </select>
+          <div className="type-container">
+            <label for="type">Question Type:</label>
+            <select value={this.state.type} name="types">
+              <option value="multiple">Multiple Choice</option>
+              <option value="boolean">True or False</option>
+              <option value="ordered">Ordered</option>
+            </select>
+          </div>
           <textarea value={this.state.question} placeholder="Question"></textarea>
           {answerFields}
         </form>

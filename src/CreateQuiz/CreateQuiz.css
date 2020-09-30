@@ -47,7 +47,7 @@
 
 .create-edit-cards-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -58,6 +58,7 @@
 .no-content-text {
   font-size: 3em;
   text-align: center;
+  margin-left: 1em
 }
 
 .new-quiz-form {
