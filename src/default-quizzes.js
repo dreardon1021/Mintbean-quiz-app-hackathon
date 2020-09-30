@@ -247,7 +247,7 @@ let defaultQuizzes = [
   },
   {
     "name": "Video Games",
-    "image": "https://lh3.googleusercontent.com/proxy/XdgbwztxjE0AZcEFpiEkT-JHi19ho7hulocPhd5UXzHebgUIMpi5CVjo-AJ1K1jlQbUcfLat1VdIyKjgoZAmJk3NcSFJp7w",
+    "image": "https://scufgaming.com/media/wysiwyg/xbox/prestige_website_elite_616x616_v1.png",
     "questions": [
       {
       "category": "Entertainment: Video Games",
